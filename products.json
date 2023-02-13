@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Apple juice",
+        "price": 10,
+        "image": "product_1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Chocolate",
+        "price": 15,
+        "image": "product_2.webp"
+    },
+    {
+        "id": 3,
+        "name": "Coffee",
+        "price": 20,
+        "image": "product_3.jfif"
+    },
+    {
+        "id": 4,
+        "name": "Apelsin",
+        "price": 10,
+        "image": "product_4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Milk",
+        "price": 15,
+        "image": "product_5.webp"
+    },
+    {
+        "id": 6,
+        "name": "Coca-Cola",
+        "price": 20,
+        "image": "product_6.jpg"
+    }
+]
