@@ -58,15 +58,17 @@ function renderCart() {
             `;
     });
   }
+  showTotalPrice();
 }
 
 function showTotalPrice() {
-    total_price.innerHTML = "Total: $200" ;
-}
-
-function totalCalculation(){
-  let totalPrice = 0;
-  products.for
+    let totalPrice = 0;
+    if(cart.length > 0) {
+      cart.forEach(item => {
+        totalPrice += products[item-1].price;
+      })
+    }
+    total_price.innerHTML = "Total: $" + totalPrice ;
 }
 
 showTotalPrice();
