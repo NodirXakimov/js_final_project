@@ -31,7 +31,6 @@ addToCartButtons.forEach((button) => {
     if(!cart.includes(e.target.dataset.id)) {
         cart.push(e.target.dataset.id);
         renderCart();
-        console.log(cart)
     }else {
         alert("This item is selected");
     }
@@ -52,13 +51,18 @@ function renderCart() {
                 <div class="cart-item-right-side">
                     <p class="cart-item-name">${products[id-1].name}</p>
                     <p class="cart-item-price">$${products[id-1].price}</p>
-                    <button>Remove item</button>
+                    <button data-id="${products[id-1].id}" class="removeItemButton">Remove item</button>
                 </div>
             </div>
             `;
     });
   }
   showTotalPrice();
+  document.querySelectorAll(".removeItemButton").forEach((button) => {
+    button.addEventListener("click", function(e){
+      removeItemFromCart(e.target.dataset.id)
+    })
+  })
 }
 
 function showTotalPrice() {
@@ -69,6 +73,15 @@ function showTotalPrice() {
       })
     }
     total_price.innerHTML = "Total: $" + totalPrice ;
+}
+
+function removeItemFromCart(id) {
+  cart.forEach((item, index) => {
+    if(item == id) {
+      cart.splice(index, 1);
+    }
+  })
+  renderCart()
 }
 
 showTotalPrice();
